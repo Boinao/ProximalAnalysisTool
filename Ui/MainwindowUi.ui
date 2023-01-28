@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1202</width>
+    <height>842</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Proximal Data Analysis</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QSplitter" name="splitter">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOn</enum>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1165</width>
+            <height>595</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2"/>
+         </widget>
+        </widget>
+        <widget class="QTextBrowser" name="textBrowser">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>10</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Console window&lt;br/&gt;This window gives you information about your running module&lt;br/&gt;Errors will also show up here, if they occur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="progress_OK">
+        <item>
+         <widget class="QProgressBar" name="progressBar">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Your current progression.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="format">
+           <string>%p%</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="okPushButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Re-run your last run module&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="stopPushButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Completely stop the currently running module&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Stop</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deletePushButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Press this button when you are ready to run the modules in your workflow&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="whatsThis">
+           <string>Press this button when you're ready to run. (Ctrl+Enter)</string>
+          </property>
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1202</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuPreprocessing">
+    <property name="title">
+     <string>Visualize &amp;&amp; Preprocessing</string>
+    </property>
+    <addaction name="actionLoad_Preprocessing"/>
+    <addaction name="actionNewResampling"/>
+    <addaction name="actionVisualizer"/>
+   </widget>
+   <widget class="QMenu" name="menuSpectralIndices">
+    <property name="title">
+     <string>Spectral Indices</string>
+    </property>
+    <addaction name="actionSpectral_Indices"/>
+    <addaction name="actionSVCSpectral_Indices"/>
+    <addaction name="actionCSVSpectral_Indices"/>
+   </widget>
+   <widget class="QMenu" name="menuRegression">
+    <property name="title">
+     <string>Regression</string>
+    </property>
+    <addaction name="actionUnivariate_Regression"/>
+    <addaction name="actionMultivariate_Regression"/>
+   </widget>
+   <widget class="QMenu" name="menuDimensionality_Reduction">
+    <property name="title">
+     <string>Dimensionality Reduction</string>
+    </property>
+    <addaction name="actionDimension_Reduction"/>
+   </widget>
+   <widget class="QMenu" name="menuClassification">
+    <property name="title">
+     <string>Classification</string>
+    </property>
+    <addaction name="actionSpectral_Distance"/>
+    <addaction name="actionClassification"/>
+   </widget>
+   <widget class="QMenu" name="menuImageUtility">
+    <property name="title">
+     <string>Image Utility</string>
+    </property>
+    <addaction name="actionFgcc"/>
+   </widget>
+   <widget class="QMenu" name="menuSimulation">
+    <property name="title">
+     <string>Simulation</string>
+    </property>
+    <addaction name="actionPy6sTimeSeries"/>
+    <addaction name="actionProsail"/>
+    <addaction name="actionSpectraSimulation"/>
+   </widget>
+   <widget class="QMenu" name="menuSpectralLibrary">
+    <property name="title">
+     <string>Spectral Library</string>
+    </property>
+    <addaction name="actionSpectralLibrarySearch"/>
+    <addaction name="actionSpectralLibraryMatch"/>
+   </widget>
+   <widget class="QMenu" name="menutToolAbout_Help">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionMenuAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuTimeSeries">
+    <property name="title">
+     <string>Timeseries Visualize &amp;&amp; Analysis </string>
+    </property>
+    <addaction name="actionTimeSeries"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Data Management</string>
+    </property>
+    <addaction name="actionView_Data"/>
+    <addaction name="actionNewSigreader"/>
+    <addaction name="actionspectraevolutionreader"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuPreprocessing"/>
+   <addaction name="menuSpectralIndices"/>
+   <addaction name="menuRegression"/>
+   <addaction name="menuDimensionality_Reduction"/>
+   <addaction name="menuClassification"/>
+   <addaction name="menuTimeSeries"/>
+   <addaction name="menuImageUtility"/>
+   <addaction name="menuSimulation"/>
+   <addaction name="menuSpectralLibrary"/>
+   <addaction name="menutToolAbout_Help"/>
+  </widget>
+  <action name="actionLoad_Preprocessing">
+   <property name="text">
+    <string>Preprocessing</string>
+   </property>
+  </action>
+  <action name="actionView_Data">
+   <property name="text">
+    <string>ASD Spectroradiometer</string>
+   </property>
+  </action>
+  <action name="actionSpectral_Indices">
+   <property name="text">
+    <string>ASD Spectral Indices</string>
+   </property>
+  </action>
+  <action name="actionMultivariate_Regression">
+   <property name="text">
+    <string>Multivariate Regression</string>
+   </property>
+  </action>
+  <action name="actionUnivariate_Regression">
+   <property name="text">
+    <string>Univariate Regression</string>
+   </property>
+  </action>
+  <action name="actionNewResampling">
+   <property name="text">
+    <string>Resampling</string>
+   </property>
+  </action>
+  <action name="actionDimension_Reduction">
+   <property name="text">
+    <string>Dimension Reduction</string>
+   </property>
+  </action>
+  <action name="actionSpectral_Distance">
+   <property name="text">
+    <string>Spectral Distance</string>
+   </property>
+  </action>
+  <action name="actionClassification">
+   <property name="text">
+    <string>Supervised Classification </string>
+   </property>
+  </action>
+  <action name="actionTimeSeries">
+   <property name="text">
+    <string>Time Series</string>
+   </property>
+  </action>
+  <action name="actionNewSigreader">
+   <property name="text">
+    <string>SVC Spectroradiometer</string>
+   </property>
+  </action>
+  <action name="actionspectraevolutionreader">
+   <property name="text">
+    <string>Spectral Evolution Spectroradiometer</string>
+   </property>
+  </action>
+  <action name="actionVisualizer">
+   <property name="text">
+    <string>Visualizer</string>
+   </property>
+  </action>
+  <action name="actionSVCSpectral_Indices">
+   <property name="text">
+    <string>SVC Spectral Indices</string>
+   </property>
+  </action>
+  <action name="actionCSVSpectral_Indices">
+   <property name="text">
+    <string>Generic</string>
+   </property>
+  </action>
+  <action name="actionFgcc">
+   <property name="text">
+    <string>Fractional Green Canopy Cover</string>
+   </property>
+  </action>
+  <action name="actionPy6sTimeSeries">
+   <property name="text">
+    <string>Python-6s</string>
+   </property>
+  </action>
+  <action name="actionProsail">
+   <property name="text">
+    <string>PROSAIL</string>
+   </property>
+  </action>
+  <action name="actionSpectraSimulation">
+   <property name="text">
+    <string>Spectral Mixing</string>
+   </property>
+  </action>
+  <action name="actionSpectralLibrarySearch">
+   <property name="text">
+    <string>Spectral Library Search</string>
+   </property>
+  </action>
+  <action name="actionSpectralLibraryMatch">
+   <property name="text">
+    <string>Spectral Library Match</string>
+   </property>
+  </action>
+  <action name="actionMenuAbout">
+   <property name="text">
+    <string>About SDAT</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
